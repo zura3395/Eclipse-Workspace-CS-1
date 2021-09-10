@@ -1,0 +1,7 @@
+18:39:15 **** Rebuild of configuration Debug for project loA02 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA02.o" "..\\src\\loA02.cpp" 
+g++ -o loA02.exe "src\\loA02.o" 
+
+18:39:16 Build Finished. 0 errors, 0 warnings. (took 564ms)
+
