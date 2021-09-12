@@ -885,3 +885,219 @@ g++ -o loA2.exe "src\\loA2.o"
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2.o" "..\\src\\loA2.cpp" 
 g++ -o loA2.exe "src\\loA2.o" 
+14:22:54 **** Incremental Build of configuration Debug for project loA2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2.o" "..\\src\\loA2.cpp" 
+g++ -o loA2.exe "src\\loA2.o" 
+14:42:03 **** Rebuild of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+14:46:25 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+14:47:42 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+14:48:10 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+14:52:40 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+14:54:13 **** Incremental Build of configuration Debug for project loA2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2.o" "..\\src\\loA2.cpp" 
+..\src\loA2.cpp: In function 'int main()':
+..\src\loA2.cpp:82:2: error: expected '(' before 'return'
+  return 0;
+  ^~~~~~
+  (
+14:54:24 **** Incremental Build of configuration Debug for project loA2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2.o" "..\\src\\loA2.cpp" 
+g++ -o loA2.exe "src\\loA2.o" 
+14:55:00 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+14:57:30 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+..\src\loA2 Vegas.cpp: In function 'int main()':
+..\src\loA2 Vegas.cpp:32:6: error: 'total' was not declared in this scope
+  if (total == 2) or (total == 3) or (total == 12) {
+      ^~~~~
+..\src\loA2 Vegas.cpp:32:18: error: expected primary-expression before 'or' token
+  if (total == 2) or (total == 3) or (total == 12) {
+                  ^~
+14:59:17 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+..\src\loA2 Vegas.cpp: In function 'int main()':
+..\src\loA2 Vegas.cpp:32:22: error: expected primary-expression before '||' token
+  if (diceTotal == 2) || (diceTotal == 3) || (diceTotal == 12) {
+                      ^~
+15:00:15 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+15:00:47 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+15:02:29 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+15:10:55 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+..\src\loA2 Vegas.cpp: In function 'int main()':
+..\src\loA2 Vegas.cpp:44:7: warning: unused variable 'roll2Total' [-Wunused-variable]
+   int roll2Total = die1 + die2;
+       ^~~~~~~~~~
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+15:11:24 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+..\src\loA2 Vegas.cpp: In function 'int main()':
+..\src\loA2 Vegas.cpp:44:7: warning: unused variable 'roll2Total' [-Wunused-variable]
+   int roll2Total = die1 + die2;
+       ^~~~~~~~~~
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+15:11:39 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+15:12:12 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+15:12:30 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2
+15:14:33 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+..\src\loA2 Vegas.cpp: In function 'int main()':
+..\src\loA2 Vegas.cpp:56:2: error: expected primary-expression before '}' token
+  }
+  ^
+15:15:43 **** Incremental Build of configuration Debug for project loA2 Vegas ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2 Vegas.o" "..\\src\\loA2 Vegas.cpp" 
+g++ -o "loA2 Vegas.exe" "src\\loA2 Vegas.o" 
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2 Vegas
+Info: Nothing to build for loA2
+15:18:06 **** Incremental Build of configuration Debug for project loA2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2.o" "..\\src\\loA2.cpp" 
+g++ -o loA2.exe "src\\loA2.o" 
+15:18:35 **** Incremental Build of configuration Debug for project loA2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2.o" "..\\src\\loA2.cpp" 
+g++ -o loA2.exe "src\\loA2.o" 
+Info: Nothing to build for loA2
+15:19:33 **** Incremental Build of configuration Debug for project loA2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\loA2.o" "..\\src\\loA2.cpp" 
+g++ -o loA2.exe "src\\loA2.o" 
