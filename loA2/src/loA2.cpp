@@ -9,8 +9,8 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main() {
@@ -71,7 +71,7 @@ int main() {
 
 	// Part 4
 	// Set random seed based on current time
-	srand(time(NULL));
+	srand(time(0));
 
 	// Roll two dice with % 6 + 1 to get a die value in the range 1 through 6 inclusive
 	int die1 = rand() % 6 + 1;
@@ -111,5 +111,6 @@ int main() {
 			cout << endl << "Congratulations, you won!";
 		}
 	}
+
 	return 0;
 }
