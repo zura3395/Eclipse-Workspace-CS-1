@@ -87,28 +87,31 @@ int main() {
 	int number;
 	cin >> number;
 
-	// Evaluate input and show names or ask for new number accordingly
-	if (number < 0) {
-		cout << endl << "You entered a negative number.";
+	// Evaluate input and show names, ask for new number, or end the program accordingly
+	while (number >= 0) {
+		if (number == 1){
+			cout << "Abigail" << endl;
+			cout << endl << "Please enter a number." << endl;
+			cin >> number;
+
+		}
+		else if (number == 2){
+			cout << "Bobby" << endl;
+			cout << endl << "Please enter a number." << endl;
+			cin >> number;
+		}
+		else if (number == 3){
+			cout << "Charmaine" << endl;
+			cout << endl << "Please enter a number." << endl;
+			cin >> number;
+		}
+		else if (number > 3) {
+			cout << "Error, you entered a number greater than 3. Please enter a number." << endl;
+			cin >> number;
+		}
 	}
-	else if ( (number < 1) || (number > 3) ) {
-		cout << "Error. Please enter a negative number." << endl;
-		cin >> number;
-			while (number >= 0) {
-				cout << "Error. Please enter a negative number." << endl;
-				cin >> number;
-			}
-		cout << endl << "You entered a negative number.";
-	}
-	else if (number == 1){
-		cout << endl << "Abigail";
-	}
-	else if (number == 2){
-		cout << endl << "Bobby";
-	}
-	else if (number == 3){
-		cout << endl << "Charmaine";
-	}
+	cout << "You entered a negative number." << endl;
+
 
 	return 0;
 }
