@@ -26,11 +26,11 @@ int main() {
 	// Ask for selection, convert to uppercase in case user inputs lowercase
 	char userSelection;
 	cin >> userSelection;
-	char menuSelection = toupper(userSelection);
+	userSelection = tolower(userSelection);
 
 	// Menu algorithm
-	while (menuSelection != 'X') {
-		if (menuSelection == 'A') {
+	while (userSelection != 'x') {
+		if (userSelection == 'a') {
 			// A. Temperature conversion, F to C
 			// Ask the user to enter a temperature, in Fahrenheit.
 			cout << endl << "Temperature conversion, F to C" << endl << "Enter the temperature in Fahrenheit." << endl;
@@ -53,9 +53,9 @@ int main() {
 			cout << "F. Computer names voting" << endl;
 			cout << "X. Exit" << endl;
 			cin >> userSelection;
-			menuSelection = toupper(userSelection);
+			userSelection = tolower(userSelection);
 		}
-		else if (menuSelection == 'B') {
+		else if (userSelection == 'b') {
 			// B. Temperature conversion, C to F
 			// Ask the user to enter a temperature, in Centigrade.
 			cout << endl << "Temperature conversion, C to F" << endl << "Enter the temperature in Centigrade." << endl;
@@ -78,9 +78,9 @@ int main() {
 			cout << "F. Computer names voting" << endl;
 			cout << "X. Exit" << endl;
 			cin >> userSelection;
-			menuSelection = toupper(userSelection);
+			userSelection = tolower(userSelection);
 		}
-		else if (menuSelection == 'C') {
+		else if (userSelection == 'c') {
 			// C. Number guessing game
 			// Set random seed based on current time, use % 100 + 1 to get a random number in the range 1 through 100
 			srand(time(0));
@@ -105,10 +105,10 @@ int main() {
 
 			// Show results
 			if (guessCounter == 1){
-				cout << "Wow, you guessed the answer correctly on your first try!" << endl << endl;
+				cout << "Wow, you guessed the number correctly on your first try!" << endl << endl;
 			}
 			else {
-				cout << "Correct! It took you " << guessCounter << " tries to guess the answer correctly." << endl << endl;
+				cout << "Correct! It took you " << guessCounter << " tries to guess the number correctly." << endl << endl;
 			}
 
 			// Show menu again
@@ -121,9 +121,9 @@ int main() {
 			cout << "F. Computer names voting" << endl;
 			cout << "X. Exit" << endl;
 			cin >> userSelection;
-			menuSelection = toupper(userSelection);
+			userSelection = tolower(userSelection);
 		}
-		else if (menuSelection == 'D') {
+		else if (userSelection == 'd') {
 			// D. Temperature table, F to C, freezing to boiling
 			cout << endl << "Temperature table, F to C, freezing to boiling" << endl;
 			cout << "Fahrenheit" << right << setw(14) << "Centigrade" << endl;
@@ -144,9 +144,9 @@ int main() {
 			cout << "F. Computer names voting" << endl;
 			cout << "X. Exit" << endl;
 			cin >> userSelection;
-			menuSelection = toupper(userSelection);
+			userSelection = tolower(userSelection);
 		}
-		else if (menuSelection == 'E') {
+		else if (userSelection == 'e') {
 			// E. Draw a rectangle
 			// Ask the user for dimensions
 			cout << endl << "Draw a rectangle" << endl << "Please enter the height." << endl;
@@ -175,11 +175,11 @@ int main() {
 			cout << "F. Computer names voting" << endl;
 			cout << "X. Exit" << endl;
 			cin >> userSelection;
-			menuSelection = toupper(userSelection);
+			userSelection = tolower(userSelection);
 		}
-		else if (menuSelection == 'F') {
+		else if (userSelection == 'f') {
 			// F. Computer names voting
-			cout << endl << "Computer names voting" << endl;
+			cout << endl << "F. Computer names voting" << endl;
 			int grabmaCounter = 0, ligmaCounter = 0, sugmaCounter = 0;
 
 			// Voting algorithm
@@ -231,7 +231,7 @@ int main() {
 			cout << "F. Computer names voting" << endl;
 			cout << "X. Exit" << endl;
 			cin >> userSelection;
-			menuSelection = toupper(userSelection);
+			userSelection = tolower(userSelection);
 		}
 		else {
 			cout << "Sorry, that is not a valid input. Please enter the letter that corresponds to the service you would like to use." << endl;
@@ -243,7 +243,7 @@ int main() {
 			cout << "F. Computer names voting" << endl;
 			cout << "X. Exit" << endl;
 			cin >> userSelection;
-			menuSelection = toupper(userSelection);
+			userSelection = tolower(userSelection);
 		}
 	}
 	cout << "Thank you for using our services." << endl;
