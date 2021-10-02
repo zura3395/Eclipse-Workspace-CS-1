@@ -11,10 +11,12 @@
 using namespace std;
 
 int main() {
-	cout << "what the question says: ";
-	float k = (float)5 / (float)2;
-	cout << k << endl;
-
-	float d = 5/2;
-	cout << d;
+	int a = 444;
+	int b = 3;
+	if (a < b || b > 2){
+		cout << a;
+	}
+	else {
+		cout << "dumm" << endl;
+	}
 }
