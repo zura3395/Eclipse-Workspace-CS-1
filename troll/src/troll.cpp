@@ -8,15 +8,11 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
 int main() {
-	int a = 444;
-	int b = 3;
-	if (a < b || b > 2){
-		cout << a;
-	}
-	else {
-		cout << "dumm" << endl;
-	}
+	float m;
+	m = 1 + (4.0/2.0) +(3/6);
+	cout << m;
 }
