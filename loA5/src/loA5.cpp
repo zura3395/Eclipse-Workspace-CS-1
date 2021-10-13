@@ -95,12 +95,14 @@ int main() {
 			getline (inFile, input);
 
 		}
+		
 		inFile.close();
 		outFile.close();
-	}
-	else {
-		cout << "Error: Payroll file could not be opened." << endl;
-		return 4;
+
+		else {
+			cout << "Error: Payroll file could not be opened." << endl;
+			return 4;
+		}
 	}
 	return 0;
 }
