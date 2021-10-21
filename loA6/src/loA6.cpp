@@ -58,7 +58,6 @@ int guessingGame(int upperBound) {
 }
 
 void drawRectangle(int rectangleHeight, int rectangleWidth) {
-	// Drawing algorithm
 	for (int height = 0; height < rectangleHeight; height++) {
 		for (int width = 0; width < rectangleWidth; width++) {
 			cout << "*";
