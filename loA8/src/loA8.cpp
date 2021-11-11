@@ -23,15 +23,10 @@ int main() {
 
 	// User inputs eight integer temperatures
 	cout << "Part 1" << endl;
-	cout << "Enter temperature 1: ";
-	getline(cin, input);
-	temperaturesP1[i] = stoi(input);
-	i++;
-	while (i < 8){
+	for (i = 0; i < 8; i++){
 		cout << "Enter temperature " << (i+1) << ": ";
 		getline(cin, input);
 		temperaturesP1[i] = stoi(input);
-		i++;
 	}
 
 	// Format and display user inputs, calculate sum
@@ -61,20 +56,24 @@ int main() {
 	}
 
 	// Display user inputs and calculate average temperature
-	for (i = 0; i < numberOfElements; i++){
-		cout << "You entered " << temperaturesP2[i] << endl;
-		sum+=temperaturesP2[i];
+	if ( numberOfElements > 0 ) {
+		for (i = 0; i < numberOfElements; i++){
+			cout << "You entered " << temperaturesP2[i] << endl;
+			sum+=temperaturesP2[i];
+		}
+		tempAvg = sum/static_cast<double>(numberOfElements);
+		cout << "The average temperature is " << showpoint << fixed << setprecision(2) << tempAvg << endl << endl;
 	}
-
-	tempAvg = sum/static_cast<double>(numberOfElements);
-	cout << "The average temperature is " << showpoint << fixed << setprecision(2) << tempAvg << endl << endl;
+	else {
+		cout << endl;
+	}
 
 	// Part 3
 	cout << "Part 3" << endl;
 	cout << "How many times would you like to roll the dice?" << endl;
 	getline(cin, input);
 	int rolls = stoi(input);
-	int rollResult;
+	int rollResult = 0;
 
 	// Create random seed
 	srand(time(0));
@@ -88,13 +87,14 @@ int main() {
 	// We do a little rolling
 	for (i = 0; i < rolls; i++){
 		rollResult = rollem();
-		rollArray[(rollResult-2)]++; // Increments counter for the roll result
+		rollArray[(rollResult-2)]++; // Increments counter for the roll result, subtract 2 from rollResult because for example, if a 12 is rolled then it goes into array slot 10
 	}
 
-	double rollOccurAvg;
+	// Calculate and display the results and percentages
+	double rollOccurPercentage;
 	for (i = 0; i < 11; i++){
-		rollOccurAvg = (rollArray[i] / static_cast<double>(rolls)) * 100;
-		cout << "Roll" << setw(3) << (i+2) << " occurrences" << setw(10) << rollArray[i] << setw(7) << rollOccurAvg << setw(2) << "%" << endl;
+		rollOccurPercentage = ( rollArray[i] / static_cast<double>(rolls) ) * 100; // The number of times the roll occurred divided by the total number of rolls times 100
+		cout << "Roll" << setw(3) << (i+2) << " occurrences" << setw(11) << rollArray[i] << setw(7) << rollOccurPercentage << setw(2) << "%" << endl;
 	}
 
 	return 0;
@@ -102,7 +102,7 @@ int main() {
 
 // Die rolling function
 int rollem() {
-	int die1 = rand() % 6 + 1;
+	int die1 = rand() % 6 + 1; // & 6 + 1 to get a remainder ranging between 1 and 6 inclusive
 	int die2 = rand() % 6 + 1;
 	return (die1 + die2);
 }
