@@ -12,6 +12,8 @@
 #include <iomanip>
 using namespace std;
 
+int convertDepartmentAbbr (string [], int, string);
+
 int main() {
 	// Part 1: Temperature report
 	cout << "Part 1: Temperature report" << endl << endl;
@@ -28,13 +30,12 @@ int main() {
 		double averageTemp = 0, totalTempSum = 0, totalAverageTemp = 0;
 
 		// Useful arrays
-		string monthName[12] =
-		{"January","February","March","April","May","June","July","August","September","October","November","December"};
-
+		string monthName [12] =
+			{"January","February","March","April","May","June","July","August","September","October","November","December"};
 		int i = 0;
-		int monthCounter[12], tempSum[12];
+		int monthCounter [12], tempSum [12];
 		for (i = 0; i < 12; i++) {
-			monthCounter[i] = tempSum[i] = 0;
+			monthCounter [i] = tempSum [i] = 0;
 		}
 
 		getline (inFile, input);
@@ -42,12 +43,12 @@ int main() {
 			// Read and parse month
 			monthString = input.substr(0,2);
 			monthNumber = stoi(monthString);
-			monthCounter[monthNumber-1]++;
+			monthCounter [monthNumber-1]++;
 
 			// Read and parse temperature
 			tempString = input.substr(2,3);
 			tempNumber = stoi(tempString);
-			tempSum[monthNumber-1] += tempNumber;
+			tempSum [monthNumber-1] += tempNumber;
 			totalNumberofTemps++;
 
 			getline (inFile, input);
@@ -59,9 +60,9 @@ int main() {
 
 		// Display data rows
 		for (i = 0; i < 12; i++) {
-			averageTemp = (double)tempSum[i]/monthCounter[i];
-			totalTempSum += tempSum[i];
-			cout << left << setw(28) << monthName[i] << setw(2) << right << monthCounter[i] << setw(27) << fixed << showpoint << setprecision(1) << averageTemp << endl;
+			averageTemp = (double)tempSum [i]/monthCounter [i];
+			totalTempSum += tempSum [i];
+			cout << left << setw(28) << monthName [i] << setw(2) << right << monthCounter [i] << setw(27) << fixed << showpoint << setprecision(1) << averageTemp << endl;
 		}
 
 		// Display summary row
@@ -73,23 +74,57 @@ int main() {
 		return 4;
 	}
 
-	// Part 2: School department report
-	cout << endl << "Part 2: School department report" << endl << endl;
+	// Part 2: Student report
+	cout << endl << "Part 2: Student report" << endl << endl;
 
 	inFile.open ("D:/CS 1 Assignment Data/Assignment 9/a9data2F21.txt",ios::in); // File path
 	if (inFile.is_open()) {
 		// Useful variables
+		string name, departmentAbbr;
+		int numberofDepartments = 11, departmentIndex = 0;
 
 		// Useful arrays
+		string departmentAbbrArray [numberofDepartments] =
+		{"MATH ", "PHYS ", "BIO  ", "COMSC", "ACCY ", "ARTH ", "POLS ", "USHST", "ELIT ", "ENGR ", "PSYC "};
+		string departmentNamesArray [numberofDepartments] =
+		{"Mathematics", "Physics", "Biology", "Computer Science", "Accounting", "Art History", "Political Science", "US History", "English Literature", "Engineering", "Psychology"};
+		int departmentCounter [numberofDepartments];
+		int i = 0;
+		for (i = 0; i < numberofDepartments; i++) {
+			departmentCounter [i] = 0;
+		}
+
+		// Display column headers
+		cout << right << "Student Name" << setw(23) << "Major" << endl;
 
 		getline (inFile, input);
 		while (!inFile.eof()) {
+			// Read and parse student data
+			name = input.substr(0,20);
+			departmentAbbr = input.substr(20,5);
+			departmentIndex = convertDepartmentAbbr (departmentAbbrArray, numberofDepartments, departmentAbbr);
+
+			// Display data rows
+			cout << left << setw(30) << name;
+
+			if (departmentIndex >= 0) {
+				cout << departmentNamesArray[departmentIndex] << endl;
+				departmentCounter[departmentIndex]++;
+			}
+			else {
+				cout << departmentAbbr << "(WARNING: Invalid abbreviation, revalidation of student records required)" << endl;
+			}
 			getline (inFile, input);
 		}
 		inFile.close();
 
+
 		// Display column headers
-		cout << right << "Department Name" << setw(20) << "Number of Majors" << endl;
+		cout << endl << right << "Department Name" << setw(24) << "Number of Majors" << endl;
+
+		for (i = 0; i < numberofDepartments; i++) {
+			cout << left << setw(30) << departmentNamesArray[i] << departmentCounter[i] << endl;
+		}
 	}
 	else {
 		cout << "Error: School department records file could not be opened." << endl;
@@ -97,4 +132,17 @@ int main() {
 	}
 
 	return 0;
+}
+
+int convertDepartmentAbbr (string departmentAbbrArray [], int numberofDepartments, string departmentAbbr) {
+	int i = 0;
+	while (i < numberofDepartments) {
+		if (departmentAbbr == departmentAbbrArray[i]) {
+			return i;
+		}
+		else {
+			i++;
+		}
+	}
+	return -1;
 }
