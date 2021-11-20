@@ -26,15 +26,15 @@ int main() {
 	if (inFile.is_open()) {
 		// Useful variables
 		string monthString, tempString;
-		int monthNumber = 0, tempNumber = 0, totalNumberofTemps = 0;
+		int monthNumber = 0, totalNumberofTemps = 0;
 		double averageTemp = 0, totalTempSum = 0, totalAverageTemp = 0;
 
 		// Useful arrays
-		string monthName [12] =
-			{"January","February","March","April","May","June","July","August","September","October","November","December"};
+		string monthName [13] =
+			{"Months","January","February","March","April","May","June","July","August","September","October","November","December"};
 		int i = 0;
-		int monthCounter [12], tempSum [12];
-		for (i = 0; i < 12; i++) {
+		int monthCounter [13], tempSum [13];
+		for (i = 0; i < 13; i++) {
 			monthCounter [i] = tempSum [i] = 0;
 		}
 
@@ -43,12 +43,11 @@ int main() {
 			// Read and parse month
 			monthString = input.substr(0,2);
 			monthNumber = stoi(monthString);
-			monthCounter [monthNumber-1]++;
+			monthCounter [monthNumber]++;
 
 			// Read and parse temperature
 			tempString = input.substr(2,3);
-			tempNumber = stoi(tempString);
-			tempSum [monthNumber-1] += tempNumber;
+			tempSum [monthNumber] += stoi(tempString);
 			totalNumberofTemps++;
 
 			getline (inFile, input);
@@ -59,7 +58,7 @@ int main() {
 		cout << "Month" << setw(36) << "Number of temperatures" << setw(23) << "Average temperature" << endl;
 
 		// Display data rows
-		for (i = 0; i < 12; i++) {
+		for (i = 1; i < 13; i++) {
 			averageTemp = (double)tempSum [i]/monthCounter [i];
 			totalTempSum += tempSum [i];
 			cout << left << setw(28) << monthName [i] << setw(2) << right << monthCounter [i] << setw(27) << fixed << showpoint << setprecision(1) << averageTemp << endl;
@@ -130,7 +129,6 @@ int main() {
 		cout << "Error: School department records file could not be opened." << endl;
 		return 4;
 	}
-
 	return 0;
 }
 
