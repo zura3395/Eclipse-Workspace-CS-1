@@ -29,7 +29,7 @@ int main() {
 		int monthNumber = 0, totalNumberofTemps = 0;
 		double averageTemp = 0, totalTempSum = 0, totalAverageTemp = 0;
 
-		// Useful arrays
+		// Useful arrays, index 13 so that index number = month number
 		string monthName [13] =
 			{"Months","January","February","March","April","May","June","July","August","September","October","November","December"};
 		int i = 0;
@@ -55,7 +55,7 @@ int main() {
 		inFile.close();
 
 		// Display column headers
-		cout << "Month" << setw(36) << "Number of temperatures" << setw(23) << "Average temperature" << endl;
+		cout << "Month" << setw(36) << "Number of temperatures" << setw(23) << "Average temperature" << endl << endl;
 
 		// Display data rows
 		for (i = 1; i < 13; i++) {
@@ -94,7 +94,7 @@ int main() {
 		}
 
 		// Display column headers
-		cout << right << "Student Name" << setw(23) << "Major" << endl;
+		cout << right << "Student Name" << setw(23) << "Major" << endl << endl;
 
 		getline (inFile, input);
 		while (!inFile.eof()) {
@@ -119,7 +119,7 @@ int main() {
 
 
 		// Display column headers
-		cout << endl << right << "Department Name" << setw(24) << "Number of Majors" << endl;
+		cout << endl << right << "Department Name" << setw(24) << "Number of Majors" << endl << endl;
 
 		for (i = 0; i < numberofDepartments; i++) {
 			cout << left << setw(30) << departmentNamesArray[i] << departmentCounter[i] << endl;
