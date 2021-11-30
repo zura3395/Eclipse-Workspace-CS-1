@@ -9,11 +9,12 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 int main() {
 	// Part 1: Restaurant ratings
-	cout << "Part 1: Restaurant ratings" << endl;
+	cout << "Part 1: Restaurant ratings" << endl << endl;
 
 	ifstream inFile;
 	string input;
@@ -39,7 +40,7 @@ int main() {
 		// Create arrays based on number of restaurants counted
 		int restaurantRatings [numberofRestaurants][3];
 		string restaurantNames [numberofRestaurants];
-		string rawRating, restaurantName;
+		string rawInput, restaurantName;
 		int substrIterator = 0, rowNumber = 0, colNumber = 0, foodSum = 0, serviceSum = 0, cleanSum = 0;
 		double foodAvg = 0, serviceAvg = 0, cleanAvg = 0, restaurantAvg = 0;
 
@@ -51,8 +52,8 @@ int main() {
 			// Automates substring parsing to reduce the number of string variables needed to get the ratings
 			colNumber = 0;
 			for (substrIterator = 0; substrIterator < 6; (substrIterator = substrIterator + 2)) {
-				rawRating = input.substr(substrIterator,2);
-				restaurantRatings [rowNumber][colNumber] = stoi(rawRating);
+				rawInput = input.substr(substrIterator,2);
+				restaurantRatings [rowNumber][colNumber] = stoi(rawInput);
 				colNumber++;
 			}
 			restaurantName = input.substr(6, 20);
@@ -76,11 +77,61 @@ int main() {
 		foodAvg = (foodSum / static_cast<double>(numberofRestaurants));
 		serviceAvg = (serviceSum / static_cast<double>(numberofRestaurants));
 		cleanAvg = (cleanSum / static_cast<double>(numberofRestaurants));
-		cout << setw(24) << "Averages:" << setw(12) << foodAvg << setw(12) << serviceAvg << setw(12) << cleanAvg << endl;
+		cout << setw(24) << "Averages:" << setw(12) << foodAvg << setw(12) << serviceAvg << setw(12) << cleanAvg << endl << endl;
 	}
 	else {
 		cout << "Error: Restaurant ratings file could not be opened" << endl;
 		return 4;
 	}
+
+	// Part 2: GPA Calculator
+	cout << "Part 2: GPA Calculator" << endl << endl;
+
+	char gradeLetter;
+	string rawInput, rawCreditHours;
+	int creditHours = 0, numericGrade = 0, gradePointTotal = 0, totalCreditHours = 0;
+	double GPA;
+	unsigned long long int i; // This makes the compiler shut up about the warning without having to set compiler flag
+
+	vector <char> gradeLetterData;
+	vector <int> creditHoursData;
+
+	// Ask user for grades
+	cout << "Enter grade and hours, or \"stop\"" << endl;
+	getline (cin,input);
+	while (input != "stop") {
+		gradeLetter = input[0];
+		gradeLetterData.push_back(gradeLetter);
+		rawCreditHours = input.substr(1,1);
+		creditHours = stoi(rawCreditHours);
+		creditHoursData.push_back(creditHours);
+		cout << "Enter grade and hours, or \"stop\"" << endl;
+		getline (cin, input);
+	}
+
+	cout << "The data entered was: " << endl;
+	for (i = 0; i < gradeLetterData.size(); i++) {
+		cout << gradeLetterData [i] << " " << creditHoursData [i] << endl;
+		if (gradeLetterData [i] == 'A') {
+			numericGrade = 4;
+		}
+		else if (gradeLetterData [i] == 'B') {
+			numericGrade = 3;
+		}
+		else if (gradeLetterData [i] == 'C') {
+			numericGrade = 2;
+		}
+		else if (gradeLetterData [i] == 'D') {
+			numericGrade = 1;
+		}
+		else if (gradeLetterData [i] == 'F') {
+			numericGrade = 0;
+		}
+		gradePointTotal += (numericGrade * creditHoursData [i]);
+		totalCreditHours += creditHoursData [i];
+	}
+	GPA = (gradePointTotal / static_cast<double>(totalCreditHours));
+	cout << "GPA = " << GPA << endl;
+
 	return 0;
 }
