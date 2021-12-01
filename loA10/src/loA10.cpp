@@ -35,7 +35,7 @@ int main() {
 			getline (inFile, input);
 		}
 		inFile.clear();
-		inFile.seekg(0);
+		inFile.seekg(0, ios::beg);
 
 		// Create arrays based on number of restaurants counted
 		int restaurantRatings [numberofRestaurants][3];
