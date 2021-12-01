@@ -31,31 +31,25 @@ int main() {
 		cout << "Rater: " << input << endl << endl;
 
 		restaurant ratings[100];
-		string rawInput;
 		int i = 0, foodSum = 0, serviceSum = 0, cleanSum = 0, numberofRestaurants = 0;
 		float totalFoodAvg = 0, totalServiceAvg = 0, totalCleanAvg = 0, restaurantSum = 0, totalRestaurantAvg = 0;
 
 		// Read and parse restaurant data
 		getline (inFile, input);
 		while (!inFile.eof()) {
-			rawInput = input.substr(0,2);
-			ratings[i].foodRating = stoi(rawInput);
-			foodSum += ratings[i].foodRating;
+			ratings[numberofRestaurants].foodRating = stoi(input.substr(0,2));
+			foodSum += ratings[numberofRestaurants].foodRating;
 
-			rawInput = input.substr(2,2);
-			ratings[i].serviceRating = stoi(rawInput);
-			serviceSum += ratings[i].serviceRating;
+			ratings[numberofRestaurants].serviceRating = stoi(input.substr(2,2));
+			serviceSum += ratings[numberofRestaurants].serviceRating;
 
-			rawInput = input.substr(4,2);
-			ratings[i].cleanRating = stoi(rawInput);
-			cleanSum += ratings[i].cleanRating;
+			ratings[numberofRestaurants].cleanRating = stoi(input.substr(4,2));
+			cleanSum += ratings[numberofRestaurants].cleanRating;
 
-			rawInput = input.substr(6, 20);
-			ratings[i].name = rawInput;
-			ratings[i].avg = ((ratings[i].foodRating + ratings[i].serviceRating + ratings[i].cleanRating) / static_cast<float>(3));
-			restaurantSum += ratings[i].avg;
+			ratings[numberofRestaurants].name = input.substr(6, 20);
+			ratings[numberofRestaurants].avg = ((ratings[numberofRestaurants].foodRating + ratings[numberofRestaurants].serviceRating + ratings[numberofRestaurants].cleanRating) / static_cast<float>(3));
+			restaurantSum += ratings[numberofRestaurants].avg;
 			numberofRestaurants++;
-			i++;
 			getline(inFile, input);
 		}
 		inFile.close();

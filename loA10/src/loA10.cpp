@@ -40,7 +40,6 @@ int main() {
 		// Create arrays based on number of restaurants counted
 		int restaurantRatings [numberofRestaurants][3];
 		string restaurantNames [numberofRestaurants];
-		string rawInput;
 		int i = 0, rowNumber = 0, colNumber = 0, foodSum = 0, serviceSum = 0, cleanSum = 0;
 		double foodAvg = 0, serviceAvg = 0, cleanAvg = 0, restaurantAvg = 0;
 
@@ -52,15 +51,13 @@ int main() {
 			// Automates substring parsing to reduce the number of string variables needed to get the ratings
 			colNumber = 0;
 			for (i = 0; i < 6; (i = i + 2)) {
-				rawInput = input.substr(i,2);
-				restaurantRatings [rowNumber][colNumber] = stoi(rawInput);
+				restaurantRatings [rowNumber][colNumber] = stoi(input.substr(i,2));
 				colNumber++;
 			}
 			foodSum += restaurantRatings [rowNumber][0];
 			serviceSum += restaurantRatings [rowNumber][1];
 			cleanSum += restaurantRatings [rowNumber][2];
-			rawInput = input.substr(6, 20);
-			restaurantNames [rowNumber] = rawInput;
+			restaurantNames [rowNumber] = input.substr(6, 20);
 			rowNumber++;
 			getline(inFile, input);
 		}
@@ -87,51 +84,46 @@ int main() {
 	// Part 2: GPA Calculator
 	cout << "Part 2: GPA Calculator" << endl << endl;
 
-	char gradeLetter;
-	string rawInput, rawCreditHours;
-	int creditHours = 0, numericGrade = 0, gradePointTotal = 0, totalCreditHours = 0;
+	int numericGrade = 0, gradePointTotal = 0, totalCreditHours = 0;
 	double GPA;
 	unsigned long long int i; // This makes the compiler shut up about the warning without having to set compiler flag
 
-	vector <char> gradeLetterData;
-	vector <int> creditHoursData;
+	vector <char> gradeLetters;
+	vector <int> creditHours;
 
 	// Ask user for grades
 	cout << "Enter grade and hours, or \"stop\"" << endl;
 	getline (cin,input);
 	while (input != "stop") {
-		gradeLetter = input[0];
-		gradeLetterData.push_back(gradeLetter);
-		rawCreditHours = input.substr(1,1);
-		creditHours = stoi(rawCreditHours);
-		creditHoursData.push_back(creditHours);
+		gradeLetters.push_back(input[0]);
+		creditHours.push_back(stoi(input.substr(1,1)));
 		cout << "Enter grade and hours, or \"stop\"" << endl;
 		getline (cin, input);
 	}
 
+	// Show user the recorded data and calculated GPA
 	cout << "The data entered was: " << endl;
-	for (i = 0; i < gradeLetterData.size(); i++) {
-		cout << gradeLetterData [i] << " " << creditHoursData [i] << endl;
-		if (gradeLetterData [i] == 'A') {
+	for (i = 0; i < gradeLetters.size(); i++) {
+		cout << gradeLetters [i] << " " << creditHours [i] << endl;
+		if (gradeLetters [i] == 'A') {
 			numericGrade = 4;
 		}
-		else if (gradeLetterData [i] == 'B') {
+		else if (gradeLetters [i] == 'B') {
 			numericGrade = 3;
 		}
-		else if (gradeLetterData [i] == 'C') {
+		else if (gradeLetters [i] == 'C') {
 			numericGrade = 2;
 		}
-		else if (gradeLetterData [i] == 'D') {
+		else if (gradeLetters [i] == 'D') {
 			numericGrade = 1;
 		}
-		else if (gradeLetterData [i] == 'F') {
+		else if (gradeLetters [i] == 'F') {
 			numericGrade = 0;
 		}
-		gradePointTotal += (numericGrade * creditHoursData [i]);
-		totalCreditHours += creditHoursData [i];
+		gradePointTotal += (numericGrade * creditHours [i]);
+		totalCreditHours += creditHours [i];
 	}
 	GPA = (gradePointTotal / static_cast<double>(totalCreditHours));
 	cout << "GPA = " << GPA << endl;
-
 	return 0;
 }
