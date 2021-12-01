@@ -7,8 +7,8 @@
 //============================================================================
 
 #include <iostream>
-#include <iomanip>
 #include <fstream>
+#include <iomanip>
 #include <vector>
 using namespace std;
 
@@ -40,8 +40,8 @@ int main() {
 		// Create arrays based on number of restaurants counted
 		int restaurantRatings [numberofRestaurants][3];
 		string restaurantNames [numberofRestaurants];
-		string rawInput, restaurantName;
-		int substrIterator = 0, rowNumber = 0, colNumber = 0, foodSum = 0, serviceSum = 0, cleanSum = 0;
+		string rawInput;
+		int i = 0, rowNumber = 0, colNumber = 0, foodSum = 0, serviceSum = 0, cleanSum = 0;
 		double foodAvg = 0, serviceAvg = 0, cleanAvg = 0, restaurantAvg = 0;
 
 		getline (inFile, input); // Skips rater name line
@@ -51,13 +51,16 @@ int main() {
 		while (!inFile.eof()) {
 			// Automates substring parsing to reduce the number of string variables needed to get the ratings
 			colNumber = 0;
-			for (substrIterator = 0; substrIterator < 6; (substrIterator = substrIterator + 2)) {
-				rawInput = input.substr(substrIterator,2);
+			for (i = 0; i < 6; (i = i + 2)) {
+				rawInput = input.substr(i,2);
 				restaurantRatings [rowNumber][colNumber] = stoi(rawInput);
 				colNumber++;
 			}
-			restaurantName = input.substr(6, 20);
-			restaurantNames [rowNumber] = restaurantName;
+			foodSum += restaurantRatings [rowNumber][0];
+			serviceSum += restaurantRatings [rowNumber][1];
+			cleanSum += restaurantRatings [rowNumber][2];
+			rawInput = input.substr(6, 20);
+			restaurantNames [rowNumber] = rawInput;
 			rowNumber++;
 			getline(inFile, input);
 		}
@@ -67,9 +70,6 @@ int main() {
 		cout << left << setw(25) << "Restaurant Name" << setw(11) << "Food" << setw(10) << "Service" << setw(14) << "Cleanliness" << "Average" << endl;
 		cout << right << setw(30) << "Rating" << setw(12) << "Rating" << setw(12) << "Rating" << setw(12) << "Rating" << endl;
 		for (rowNumber = 0; rowNumber < numberofRestaurants; rowNumber++) {
-			foodSum += restaurantRatings [rowNumber][0];
-			serviceSum += restaurantRatings [rowNumber][1];
-			cleanSum += restaurantRatings [rowNumber][2];
 			restaurantAvg = ((restaurantRatings [rowNumber][0] + restaurantRatings [rowNumber][1] + restaurantRatings [rowNumber][2]) / static_cast<double>(3));
 			cout << left << setw(27) << restaurantNames [rowNumber] << setw(12) << restaurantRatings [rowNumber][0] << setw(12) << restaurantRatings [rowNumber][1] << setw(11) << setprecision(3) << restaurantRatings [rowNumber][2] << restaurantAvg << endl;
 		}
