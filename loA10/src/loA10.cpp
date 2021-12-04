@@ -85,7 +85,6 @@ int main() {
 	cout << "Part 2: GPA Calculator" << endl << endl;
 
 	int numericGrade = 0, gradePointTotal = 0, totalCreditHours = 0;
-	double GPA;
 	unsigned long long int i; // This makes the compiler shut up about the warning without having to set compiler flag
 
 	vector <char> gradeLetters;
@@ -123,7 +122,7 @@ int main() {
 		gradePointTotal += (numericGrade * creditHours [i]);
 		totalCreditHours += creditHours [i];
 	}
-	GPA = (gradePointTotal / static_cast<double>(totalCreditHours));
-	cout << "GPA = " << GPA << endl;
+	double gpa = (gradePointTotal / static_cast<double>(totalCreditHours));
+	cout << "GPA = " << gpa << endl;
 	return 0;
 }
