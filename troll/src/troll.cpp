@@ -7,18 +7,17 @@
 //============================================================================
 
 #include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <string>
+#include <vector>
 using namespace std;
 
-int main (){
-	int nums[10] = {4,7,9,2,1,5,0,8,3,4};
-	int i = 0;
-	while (i< 10){
-		if (nums[i] == 4) {
-			cout << "pog" << endl;
-		}
-		else {
-			cout << "not" << endl;
-		}
-		i++;
-	}
+int main() {
+	string restZip = "5952-L2W";
+	int firstPart = stoi( restZip.substr(0,4) );
+	string secondPart = restZip.substr(5,3);
+	cout << firstPart << endl;
+	cout << secondPart << endl;
+return 0;
 }
