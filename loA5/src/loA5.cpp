@@ -23,7 +23,7 @@ int main() {
 	int ratingSum = 0;
 
 	// Open restaurant ratings file
-	inFile.open ("D:/CS 1 Assignment 5 Data/a5data1F21.txt",ios::in); // File path
+	inFile.open ("D:/CS 1 Assignment Data/Assignment 5/a5data1F21.txt",ios::in); // File path
 	if (inFile.is_open()) {
 		// Display rater name
 		getline (inFile, input);
@@ -62,8 +62,8 @@ int main() {
 	ofstream outFile;
 
 	// Open payroll file
-	inFile.open ("D:/CS 1 Assignment 5 Data/a5data2F21-2.txt",ios::in); // Input file path
-	outFile.open ("D:/CS 1 Assignment 5 Data/A5PayrollOutput.txt",ios::out); // Output file path
+	inFile.open ("D:/CS 1 Assignment Data/Assignment 5/a5data2F21-2.txt",ios::in); // Input file path
+	outFile.open ("D:/CS 1 Assignment Data/Assignment 5/A5PayrollOutput.txt",ios::out); // Output file path
 	if (inFile.is_open()) {
 
 		// Check output file path validity
